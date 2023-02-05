@@ -1,8 +1,8 @@
-import logo from "./logo.svg";
 import "./App.css";
+import WelcomeComponent from "./components/WelcomeComponent";
 
 function App() {
-  return <div>hey</div>;
+  return <WelcomeComponent />;
 }
 
 export default App;
