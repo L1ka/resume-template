@@ -1,3 +1,8 @@
+@font-face {
+  font-family: "Helvetica Neue";
+  src: url(../styles/HelveticaNeue-01.ttf);
+}
+
 $font-primary: "Helvetica Neue";
 
 @mixin label-text {
