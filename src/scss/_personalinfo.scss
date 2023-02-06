@@ -1,0 +1,47 @@
+.personal-info-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 20px;
+  background-color: #f9f9f9;
+  width: 1098px;
+  height: 1080px;
+
+  &__two-input {
+    display: flex;
+    justify-content: center;
+    margin-top: 49px;
+  }
+
+  &__btn {
+    width: 151px;
+    height: 48px;
+    background: #6b40e3;
+    border-radius: 4px;
+    padding: 18px 60px;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    color: #ffffff;
+    margin-top: 132px;
+    margin-right: 150px;
+    align-self: flex-end;
+  }
+}
+
+///////////////////
+///
+///
+///
+///
+
+.right-personal-container {
+  height: 1080px;
+  width: 822px;
+}
+
+.test {
+  display: flex;
+  justify-content: center;
+}

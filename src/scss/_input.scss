@@ -1,0 +1,59 @@
+@import "./variables";
+
+.input-container {
+  height: 122px;
+  @include container-flex;
+
+  &__label {
+    font-family: $font-primary;
+    @include label-text;
+  }
+
+  &__input {
+    height: 48px;
+    border: 1px solid #bcbcbc;
+    border-radius: 4px;
+    text-indent: 16px;
+    &:focus::placeholder {
+      color: transparent;
+    }
+  }
+
+  &__hint {
+    font-family: $font-primary;
+    @include hint-text;
+  }
+}
+
+///////////////////////////
+// File Input
+//////////////////////////
+
+.file-input {
+  width: 419px;
+  padding: 34px 24px;
+  align-self: flex-start;
+  margin-left: 126px;
+
+  &__label {
+    font-family: $font-primary;
+    @include label-text;
+    font-size: 18px;
+    margin-right: 19px;
+  }
+
+  &__btn {
+    background: #0e80bf;
+    width: 107px;
+    height: 27px;
+    border: none;
+    border-radius: 4px;
+    padding: 5px 19px;
+    color: #ffffff;
+    font-family: $font-primary;
+    font-style: normal;
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 17px;
+  }
+}
