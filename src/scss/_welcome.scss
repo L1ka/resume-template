@@ -1,5 +1,5 @@
 .main-container {
-  background-image: url(../../public/back_img.jpg);
+  background-image: url(../images/back_img.jpg);
   width: 1920px;
   height: 1080px;
   background-size: cover;
@@ -11,7 +11,7 @@
     padding-top: 25px;
 
     &--logo {
-      background-image: url(../../public/text-logo.png);
+      background-image: url(../images/text-logo.png);
       width: 236px;
       height: 38px;
       background-size: cover;
@@ -19,7 +19,7 @@
   }
 
   &__logo {
-    background-image: url(../../public/logo.png);
+    background-image: url(../images/logo.png);
     position: absolute;
     width: 299px;
     height: 299px;

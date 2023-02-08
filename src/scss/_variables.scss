@@ -21,6 +21,38 @@ $font-primary: "Helvetica Neue";
   color: #2e2e2e;
 }
 
+@mixin name {
+  font-family: $font-primary;
+  font-style: normal;
+  font-weight: 700;
+  font-size: 34px;
+  line-height: 42px;
+  color: #f93b1d;
+}
+
+@mixin helvatica700 {
+  font-family: "Helvetica Neue";
+  font-style: normal;
+  font-weight: 700;
+}
+@mixin helvatica500 {
+  font-family: "Helvetica Neue";
+  font-style: normal;
+  font-weight: 500;
+}
+
+@mixin helvatica400 {
+  font-family: "Helvetica Neue";
+  font-style: normal;
+  font-weight: 400;
+}
+
+@mixin helvatica300 {
+  font-family: "Helvetica Neue";
+  font-style: normal;
+  font-weight: 300;
+}
+
 @mixin container-flex {
   display: flex;
   flex-direction: column;

@@ -3,6 +3,7 @@
 .input-container {
   height: 122px;
   @include container-flex;
+  position: relative;
 
   &__label {
     font-family: $font-primary;
@@ -23,6 +24,22 @@
     font-family: $font-primary;
     @include hint-text;
   }
+
+  &__svg {
+    position: absolute;
+    display: none;
+    left: 100%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+  }
+
+  &__valid-icon {
+    position: absolute;
+    display: none;
+    top: 50%;
+    right: 2.5rem;
+    transform: translateY(-50%);
+  }
 }
 
 ///////////////////////////
@@ -34,6 +51,7 @@
   padding: 34px 24px;
   align-self: flex-start;
   margin-left: 126px;
+  position: relative;
 
   &__label {
     font-family: $font-primary;
@@ -56,4 +74,36 @@
     font-size: 14px;
     line-height: 17px;
   }
+}
+
+//////////
+/// error
+///
+
+.label-error {
+  color: #e52f2f;
+}
+.input-error {
+  border: 1px solid #ef5050;
+}
+
+.icon-error {
+  display: flex;
+}
+
+input:focus {
+  outline: none;
+}
+
+
+.input-valid {
+  border: 1px solid #98e37e;
+}
+
+.error {
+  border: 1px solid #ef5050;
+}
+
+.untouched {
+  border: 1px solid #bcbcbc;
 }
