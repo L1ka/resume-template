@@ -5,7 +5,7 @@ const Textarea = (props) => {
   const containerHeight = props.height === "103px" ? "148px" : "224px";
 
   return (
-    <div className="textarea-container">
+    <div className="textarea-container" style={{ height: containerHeight }}>
       <label className="textarea-container__label">{props.label}</label>
       <textarea
         className="textarea-container__textarea"
