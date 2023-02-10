@@ -95,7 +95,6 @@ input:focus {
   outline: none;
 }
 
-
 .input-valid {
   border: 1px solid #98e37e;
 }
@@ -106,4 +105,9 @@ input:focus {
 
 .untouched {
   border: 1px solid #bcbcbc;
+}
+
+.date {
+  text-indent: 0;
+  padding: 14px 16px;
 }

@@ -1,7 +1,8 @@
 import "./App.scss";
 import Welcome from "./components/Welcome";
 import { Routes, Route } from "react-router-dom";
-import PersonalInfo from "./components/PersonalInfo";
+import PersonalInfo from "./components/personal-info/PersonalInfo";
+import Experience from "./components/experience/Experience";
 
 function App() {
   return (
@@ -9,6 +10,7 @@ function App() {
       <Routes>
         <Route path="/" element={<Welcome />} />
         <Route path="pInfo" element={<PersonalInfo />} />
+        <Route path="work" element={<Experience />} />
       </Routes>
     </div>
   );

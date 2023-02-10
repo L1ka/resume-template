@@ -2,10 +2,11 @@
 
 .right-personal-container {
   width: 822px;
-  min-height: 1080px;
+  // height: 1080px;
   padding: 48px 75px 44px 80px;
   display: flex;
   position: relative;
+  background: #ffffff;
 
   &__name {
     @include name;

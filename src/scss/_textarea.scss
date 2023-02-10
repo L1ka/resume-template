@@ -2,6 +2,7 @@
 
 .textarea-container {
   width: 846px;
+  position: relative;
   @include container-flex;
 
   &__label {
@@ -21,4 +22,45 @@
       font-size: 16px;
     }
   }
+
+  &__valid-icon {
+    position: absolute;
+    top: 50%;
+    right: 2.5rem;
+    display: none;
+  }
+  &__invalid-icon {
+    position: absolute;
+    display: none;
+    left: 100%;
+    top: 50%;
+    transform: translateX(-50%);
+  }
+}
+
+.label-error {
+  color: #e52f2f;
+}
+.input-error {
+  border: 1px solid #ef5050;
+}
+
+.icon-error {
+  display: flex;
+}
+
+textarea:focus {
+  outline: none;
+}
+
+.input-valid {
+  border: 1px solid #98e37e;
+}
+
+.error {
+  border: 1px solid #ef5050;
+}
+
+.untouched {
+  border: 1px solid #bcbcbc;
 }
