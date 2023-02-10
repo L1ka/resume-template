@@ -1,0 +1,76 @@
+import React from "react";
+import Input from "../shared/Input";
+import Textarea from "../shared/Textarea";
+import "../../scss/_work.scss";
+//localStorage.clear();
+const ExperienceForm = ({ inputData, handleChange, errorData, index }) => {
+  return (
+    <div className="work-container__form">
+      <Input
+        value={inputData[index]?.position}
+        name="position"
+        handleChange={handleChange}
+        placeholder="დეველოპერი, დიზაინერი, ა.შ."
+        label="თანამდებობა"
+        hint="მინიმუმ 2 სიმბოლო"
+        width="798px"
+        error={errorData[index]?.position}
+        type="text"
+        index={index}
+      />
+
+      <Input
+        value={inputData[index]?.company}
+        name="company"
+        handleChange={handleChange}
+        placeholder="დამსაქმებელი"
+        label="დამსაქმებელი"
+        hint="მინიმუმ 2 სიმბოლო"
+        width="798px"
+        error={errorData[index]?.company}
+        type="text"
+        index={index}
+      />
+      <div className="work-container__form--two-input">
+        <Input
+          value={inputData[index]?.startDate}
+          name="startDate"
+          handleChange={handleChange}
+          placeholder=""
+          label="დაწყების რიცხვი"
+          hint=""
+          width="371px"
+          error={errorData[index]?.startDate}
+          type="date"
+          index={index}
+        />
+
+        <Input
+          value={inputData[index]?.endDate}
+          name="endDate"
+          handleChange={handleChange}
+          placeholder=""
+          label="დამთავრების რიცხვი"
+          hint=""
+          width="371px"
+          error={errorData[index]?.endDate}
+          type="date"
+          index={index}
+        />
+      </div>
+      <Textarea
+        value={inputData[index]?.textarea}
+        name="textarea"
+        handleChange={handleChange}
+        placeholder="როლი თანამდებობაზე და ზოგადი აღწერა"
+        label="აღწერა"
+        height="123px"
+        error={errorData[index]?.textarea}
+        index={index}
+      />
+      <hr className="work-container__form--line"></hr>
+    </div>
+  );
+};
+
+export default ExperienceForm;
