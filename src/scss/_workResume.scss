@@ -1,0 +1,60 @@
+@import "./variables";
+
+.work-resume-container {
+  width: 822px;
+  padding: 24px 75px 44px 80px;
+  display: flex;
+  flex-direction: column;
+
+  &:first-child {
+    position: relative;
+    height: max-content;
+  }
+
+  &__line {
+    color: #c8c8c8;
+  }
+
+  &__experience {
+    font-size: 16px;
+    line-height: 20px;
+    margin-bottom: 7px;
+    display: flex;
+    gap: 7px;
+    color: #1a1a1a;
+    @include helvatica500;
+  }
+
+  &__date {
+    display: flex;
+    gap: 7px;
+    font-size: 16px;
+    line-height: 19px;
+    @include helvatica400;
+    font-style: italic;
+    color: #919191;
+    margin-bottom: 16px;
+  }
+
+  &__textarea--label {
+    display: none;
+    margin: 15px 0;
+    margin-bottom: 10px;
+    font-size: 18px;
+    line-height: 22px;
+    color: #f93b1d;
+    @include helvatica700;
+  }
+
+  &__textarea {
+    width: 100%;
+    font-size: 16px;
+    line-height: 22px;
+    overflow-wrap: break-word;
+    height: max-content;
+    @include helvatica400;
+  }
+  .show {
+    display: flex;
+  }
+}
