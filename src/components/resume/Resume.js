@@ -9,7 +9,7 @@ const checkPopup = !JSON.parse(localStorage.getItem("popup"))
   ? "open"
   : JSON.parse(localStorage.getItem("popup"));
 
-localStorage.clear();
+//localStorage.clear();
 
 const Resume = () => {
   const location = useLocation();

@@ -325,16 +325,7 @@ const Education = () => {
     }
   };
 
-  const refreshValues = () => {
-    localStorage.removeItem("input");
-    localStorage.removeItem("error");
-    localStorage.removeItem("education-error");
-    localStorage.removeItem("education-input");
-    localStorage.removeItem("education-form");
-    localStorage.removeItem("input-work");
-    localStorage.removeItem("error-work");
-    localStorage.removeItem("add-form");
-  };
+  const refreshValues = () => {};
   const navigate = useNavigate();
   const goBack = () => {
     navigate("/work");

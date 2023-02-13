@@ -201,14 +201,7 @@ const Experience = () => {
   };
 
   const refreshValues = () => {
-    window.localStorage.removeItem("input");
-    window.localStorage.removeItem("error");
-    window.localStorage.removeItem("education-error");
-    window.localStorage.removeItem("education-input");
-    window.localStorage.removeItem("education-form");
-    window.localStorage.removeItem("input-work");
-    window.localStorage.removeItem("error-work");
-    window.localStorage.removeItem("add-form");
+    localStorage.clear();
   };
   const navigate = useNavigate();
   const goBack = () => {
