@@ -238,13 +238,62 @@ const Education = () => {
         return new Blob([byteArray], { type: contentType });
       }
 
+      function base64ToBlob(
+        base64,
+        contentType = "image/png",
+        chunkLength = 512
+      ) {
+        const byteCharsArray = Array.from(
+          atob(base64.substr(base64.indexOf(",") + 1))
+        );
+        const chunksIterator = new Array(
+          Math.ceil(byteCharsArray.length / chunkLength)
+        );
+        const bytesArrays = [];
+
+        for (let c = 0; c < chunksIterator.length; c++) {
+          bytesArrays.push(
+            new Uint8Array(
+              byteCharsArray
+                .slice(c * chunkLength, chunkLength * (c + 1))
+                .map((s) => s.charCodeAt(0))
+            )
+          );
+        }
+
+        const blob = new Blob(bytesArrays, { type: contentType });
+
+        return blob;
+      }
+
+      //       const fr = new FileReader();
+      //     fr.readAsDataURL(e.target.files[0]);
+      //     fr.addEventListener("load", () => {
+      //       setPhoto(fr.result);
+      //     });
+      // onChange ზე ვუშვებ ამას და მერე გაგზავნამდე ვაქცევ ბლობად ამ დათასამ ფუნცქიიცთ
+
+      // fetch(photo)
+      //   .then((res) => res.blob())
+      //   .then((blob) =>
+
+      // fetch(personalState.image)
+      //   .then((res) => res.blob())
+      //   .then((blob) => {
+      //     const objectURL = URL.createObjectURL(blob);
+      //     //console.log(objectURL);
+      //     fd.append("image", objectURL);
+      //   });
+
+      //console.log(blobImage, "test");
+
       const form = {
         name: personalState.name,
         surname: personalState.surname,
         email: personalState.email,
         phone_number: personalState.phone_number,
         about_me: personalState.about_me,
-        image: dataUrlToBlob(),
+        image: base64ToBlob(personalState.image),
       };
 
       const fd = new FormData();
