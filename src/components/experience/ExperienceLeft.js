@@ -47,6 +47,7 @@ const ExperienceLeft = ({
         <button className="work-container__two-btn--prev" onClick={goBack}>
           ᲣᲙᲐᲜ
         </button>
+
         <button
           className="work-container__two-btn--next"
           onClick={handleSubmit}

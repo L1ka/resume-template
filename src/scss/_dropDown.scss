@@ -1,0 +1,110 @@
+@import "./variables";
+
+.dropdown {
+  height: 122px;
+  padding: 8px 24px;
+  gap: 8px;
+  position: relative;
+
+  &__label {
+    font-family: $font-primary;
+    @include label-text;
+  }
+
+  &__btn {
+    height: 48px;
+    width: 371px;
+    border: 1px solid #bcbcbc;
+    border-radius: 4px;
+    text-indent: 16px;
+    padding-right: 19px;
+    margin-top: 6px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background: #ffffff;
+    cursor: pointer;
+    position: relative;
+
+    // &--valid {
+    //   position: absolute;
+    //   display: none;
+    //   top: 50%;
+    //   right: 2.5rem;
+    //   transform: translateY(-50%);
+    // }
+  }
+
+  &__error {
+    position: absolute;
+    display: none;
+    left: 100%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+  }
+
+  &__content {
+    background: #ffffff;
+    border-radius: 4px;
+    position: absolute;
+    z-index: 100;
+    filter: drop-shadow(0px 16px 14px rgba(0, 0, 0, 0.24));
+  }
+
+  &__item {
+    height: 48px;
+    width: 371px;
+    text-indent: 16px;
+    display: flex;
+    align-items: center;
+    font-size: 16px;
+    line-height: 21px;
+    @include helvatica400;
+    color: #1a1a1a;
+    cursor: pointer;
+
+    li {
+      list-style: none;
+      height: 48px;
+      width: 371px;
+      display: flex;
+      align-items: center;
+    }
+  }
+}
+
+//////////
+/// error
+///
+
+.label-error {
+  color: #e52f2f;
+}
+.input-error {
+  border: 1px solid #ef5050;
+}
+
+.icon-error {
+  display: flex;
+}
+
+input:focus {
+  outline: none;
+}
+
+.input-valid {
+  border: 1px solid #98e37e;
+}
+
+.error {
+  border: 1px solid #ef5050;
+}
+
+.untouched {
+  border: 1px solid #bcbcbc;
+}
+
+.date {
+  text-indent: 0;
+  padding: 14px 16px;
+}

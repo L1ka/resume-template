@@ -4,10 +4,10 @@ import "../../scss/_workResume.scss";
 const ExperienceResume = ({ data }) => {
   if (
     !data?.position &&
-    !data?.company &&
-    !data?.startDate &&
-    !data?.endDate &&
-    !data?.textarea
+    !data?.employer &&
+    !data?.start_date &&
+    !data?.due_date &&
+    !data?.description
   )
     return;
   const showLabel = data ? "show" : "";
@@ -19,14 +19,14 @@ const ExperienceResume = ({ data }) => {
       </p>
       <div className="work-resume-container__experience">
         <p>{data.position}</p>
-        <p>{data.company}</p>
+        <p>{data.employer}</p>
       </div>
       <div className="work-resume-container__date">
-        <p>{data.startDate}</p>
-        <p>{data.endDate}</p>
+        <p>{data.start_date}</p>
+        <p>{data.due_date}</p>
       </div>
       <div className="work-resume-container__textarea">
-        <p>{data.textarea}</p>
+        <p>{data.description}</p>
       </div>
     </div>
   );

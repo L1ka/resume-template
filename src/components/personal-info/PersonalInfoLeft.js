@@ -17,26 +17,26 @@ const PersonalInfoLeft = ({
 
       <div className="personal-info-container__two-input">
         <Input
-          value={inputData.firstName}
-          name="firstName"
+          value={inputData.name}
+          name="name"
           handleChange={handleChange}
           placeholder="სახელი"
           label="სახელი"
           hint="მინიმუმ 2 ასო, ქართული ასოები"
           width="371px"
-          error={errorData?.firstName}
+          error={errorData?.name}
           type="text"
         />
 
         <Input
-          value={inputData.lastName}
-          name="lastName"
+          value={inputData.surname}
+          name="surname"
           handleChange={handleChange}
           placeholder="გვარი"
           label="გვარი"
           hint="მინიმუმ 2 ასო, ქართული ასოები"
           width="371px"
-          error={errorData?.lastName}
+          error={errorData?.surname}
           type="text"
         />
       </div>
@@ -65,8 +65,8 @@ const PersonalInfoLeft = ({
       </div>
 
       <Textarea
-        value={inputData.textarea}
-        name="textarea"
+        value={inputData.about_me}
+        name="about_me"
         handleChange={handleChange}
         placeholder="ზოგადი ინფო შენ შესახებ"
         label="ჩემ შესახებ (არასავალდებულო)"
@@ -86,14 +86,14 @@ const PersonalInfoLeft = ({
       />
 
       <Input
-        value={inputData.phone}
-        name="phone"
+        value={inputData.phone_number}
+        name="phone_number"
         handleChange={handleChange}
         placeholder="მობილურის ნომერი"
         label="მობილურის ნომერი"
         hint="უნდა აკმაყოფილებდეს ქართული მობილურის ნომრის ფორმატს"
         width="798px"
-        error={errorData?.phone}
+        error={errorData?.phone_number}
         type="text"
       />
 

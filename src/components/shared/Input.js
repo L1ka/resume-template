@@ -20,7 +20,7 @@ const Input = (props) => {
         className={`input-container__input ${error()} ${props.type}`}
         onChange={(e) => props.handleChange(e, props.index)}
         name={props.name}
-        value={props.value}
+        value={props.value || ""}
         style={{ width: props.width }}
         placeholder={props.placeholder}
         type={props.type}

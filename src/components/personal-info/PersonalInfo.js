@@ -91,7 +91,7 @@ const PersonalInfo = () => {
       });
     };
 
-    if (name === "firstName" || name === "lastName") {
+    if (name === "name" || name === "surname") {
       if (e.target.value.length >= 2 && georgian.test(e.target.value)) {
         errorRemove(name);
         return;
@@ -111,7 +111,7 @@ const PersonalInfo = () => {
       }
     }
 
-    if (name === "phone") {
+    if (name === "phone_number") {
       if (phone.test(e.target.value)) {
         errorRemove(name);
         return;
@@ -131,20 +131,20 @@ const PersonalInfo = () => {
 
   const submitValidation = () => {
     const errorsObj = {};
-    if (!state.firstName || errors.firstName) {
-      errorsObj.firstName = true;
+    if (!state.name || errors.name) {
+      errorsObj.name = true;
     }
 
-    if (!state.lastName || errors.lastName) {
-      errorsObj.lastName = true;
+    if (!state.surname || errors.surname) {
+      errorsObj.surname = true;
     }
 
     if (!state.email || errors.email) {
       errorsObj.email = true;
     }
 
-    if (!state.phone || errors.phone) {
-      errorsObj.phone = true;
+    if (!state.phone_number || errors.phone_number) {
+      errorsObj.phone_number = true;
     }
 
     if (!state.image || errors.image) {
@@ -156,9 +156,9 @@ const PersonalInfo = () => {
     });
 
     if (
-      errors.firstName === false &&
-      errors.lastName === false &&
-      errors.phone === false &&
+      errors.name === false &&
+      errors.surname === false &&
+      errors.phone_number === false &&
       errors.email === false &&
       errors.image === false
     ) {
@@ -173,7 +173,14 @@ const PersonalInfo = () => {
   };
 
   const refreshValues = () => {
-    window.localStorage.clear();
+    window.localStorage.removeItem("input");
+    window.localStorage.removeItem("error");
+    window.localStorage.removeItem("education-error");
+    window.localStorage.removeItem("education-input");
+    window.localStorage.removeItem("education-form");
+    window.localStorage.removeItem("input-work");
+    window.localStorage.removeItem("error-work");
+    window.localStorage.removeItem("add-form");
   };
 
   return (

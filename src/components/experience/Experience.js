@@ -22,7 +22,6 @@ const Experience = () => {
   const personalState = JSON.parse(localStorage.getItem("input"));
 
   useEffect(() => {
-    console.log("changed", state);
     localStorage.setItem("input-work", JSON.stringify(state));
   }, [state]);
 
@@ -37,7 +36,6 @@ const Experience = () => {
       if (i === index) {
         state[index][name] = value;
         setstate([...state]);
-        console.log(state, i, index, "equal");
       }
     });
 
@@ -59,7 +57,7 @@ const Experience = () => {
           setErrors([...errors]);
         };
 
-        if (name === "position" || name === "company") {
+        if (name === "position" || name === "employer") {
           if (e.target.value.length >= 2) {
             errorRemove(name);
             return;
@@ -69,7 +67,11 @@ const Experience = () => {
           }
         }
 
-        if (name === "startDate" || name === "endDate" || name === "textarea") {
+        if (
+          name === "start_date" ||
+          name === "due_date" ||
+          name === "description"
+        ) {
           if (e.target.value) {
             errorRemove(name);
             return;
@@ -90,7 +92,7 @@ const Experience = () => {
           setErrors([...errors]);
         };
 
-        if (name === "position" || name === "company") {
+        if (name === "position" || name === "employer") {
           if (e.target.value.length >= 2) {
             errorRemove(name);
             return;
@@ -103,7 +105,11 @@ const Experience = () => {
           }
         }
 
-        if (name === "startDate" || name === "endDate" || name === "textarea") {
+        if (
+          name === "start_date" ||
+          name === "due_date" ||
+          name === "description"
+        ) {
           if (e.target.value) {
             errorRemove(name);
             return;
@@ -121,13 +127,12 @@ const Experience = () => {
 
   const submitValidation = () => {
     if (!state[0] || Object.keys(state[0]).length === 0) {
-      console.log("yes");
       errors.push({});
       errors[0].position = true;
-      errors[0].company = true;
-      errors[0].startDate = true;
-      errors[0].endDate = true;
-      errors[0].textarea = true;
+      errors[0].employer = true;
+      errors[0].start_date = true;
+      errors[0].due_date = true;
+      errors[0].description = true;
 
       setErrors([...errors]);
       return;
@@ -138,17 +143,17 @@ const Experience = () => {
         if (!el.position) {
           errors[id].position = true;
         }
-        if (!el.company) {
-          errors[id].company = true;
+        if (!el.employer) {
+          errors[id].employer = true;
         }
-        if (!el.startDate) {
-          errors[id].startDate = true;
+        if (!el.start_date) {
+          errors[id].start_date = true;
         }
-        if (!el.endDate) {
-          errors[id].endDate = true;
+        if (!el.due_date) {
+          errors[id].due_date = true;
         }
-        if (!el.textarea) {
-          errors[id].textarea = true;
+        if (!el.description) {
+          errors[id].description = true;
         }
       }
       setErrors([...errors]);
@@ -157,38 +162,37 @@ const Experience = () => {
     const test = state.map((el, id) => {
       if (
         !errors[id].position &&
-        !errors[id].company &&
-        !errors[id].startDate &&
-        !errors[id].endDate &&
-        !errors[id].textarea &&
+        !errors[id].employer &&
+        !errors[id].start_date &&
+        !errors[id].due_date &&
+        !errors[id].description &&
         state[0].position &&
-        state[0].company &&
-        state[0].startDate &&
-        state[0].endDate &&
-        state[0].textarea
+        state[0].employer &&
+        state[0].start_date &&
+        state[0].due_date &&
+        state[0].description
       ) {
         return true;
       } else if (
         !el.position &&
-        !el.company &&
-        !el.startDate &&
-        !el.endDate &&
-        !el.textarea &&
+        !el.employer &&
+        !el.start_date &&
+        !el.due_date &&
+        !el.description &&
         id !== 0
       ) {
         delete errors[id].position;
-        delete errors[id].company;
-        delete errors[id].startDate;
-        delete errors[id].endDate;
-        delete errors[id].textarea;
+        delete errors[id].employer;
+        delete errors[id].start_date;
+        delete errors[id].due_date;
+        delete errors[id].description;
         setErrors([...errors]);
         return true;
       } else {
         return false;
       }
     });
-    if (test.every((el) => el === true)) return console.log("you can leave");
-    console.log(test);
+    if (test.every((el) => el === true)) return navigate("/education");
   };
 
   const handleSubmit = function (e) {
@@ -197,7 +201,14 @@ const Experience = () => {
   };
 
   const refreshValues = () => {
-    window.localStorage.clear();
+    window.localStorage.removeItem("input");
+    window.localStorage.removeItem("error");
+    window.localStorage.removeItem("education-error");
+    window.localStorage.removeItem("education-input");
+    window.localStorage.removeItem("education-form");
+    window.localStorage.removeItem("input-work");
+    window.localStorage.removeItem("error-work");
+    window.localStorage.removeItem("add-form");
   };
   const navigate = useNavigate();
   const goBack = () => {
@@ -219,8 +230,8 @@ const Experience = () => {
       />
       <div className="resume-container">
         <PersonalInfoRight data={personalState} />
-        {state.map((el) => {
-          return <ExperienceResume data={el} />;
+        {state.map((el, i) => {
+          return <ExperienceResume data={el} key={i} />;
         })}
         <img
           className="resume-container__logo"
